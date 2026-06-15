@@ -12,10 +12,10 @@ Este repositorio fue creado con el propósito de realizar una práctica de contr
 .
 ├── README.md
 └── docs/
-    ├── Cesar.txt
-    ├── Domenica.txt
-    ├── Jessi.txt
-    └── MariaPaula.txt
+    ├── Cesar.md
+    ├── Domenica.md
+    ├── Jessi.md
+    └── MariaPaula.md
 ```
 
 ---
