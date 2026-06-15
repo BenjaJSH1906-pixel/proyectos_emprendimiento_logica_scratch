@@ -1,8 +1,8 @@
-# 🧠 Lógica del Negocio: [Nombre del Proyecto]
+# 🧠 Lógica del Negocio: Inspira+
 
 ## 📖 Descripción
 
-Breve descripción del negocio y el problema que resuelve.
+**Inspira+** es un sistema que orienta a estudiantes interesados en postular a becas. Evalúa si el usuario cumple con tres requisitos importantes: contar con un certificado de inglés, demostrar liderazgo y haber realizado voluntariados. Si no cumple alguno de estos requisitos, el sistema le brinda una recomendación para mejorar su perfil antes de aplicar.
 
 ---
 
@@ -10,12 +10,21 @@ Breve descripción del negocio y el problema que resuelve.
 
 ```mermaid
 flowchart TD
-    A[Inicio] --> B[El usuario ingresa <dato>]
-    B --> C{¿Se cumple la condición?}
-    C -- Sí --> D[Realizar acción A]
-    C -- No --> E[Realizar acción B]
-    D --> F[Fin]
-    E --> F
+    A[Inicio] --> B[¿Tiene certificado de inglés?]
+
+    B -- Sí --> C[¿Tiene liderazgo?]
+    B -- No --> D[Debe mejorar su inglés antes de aplicar a becas]
+    D --> Z[Fin]
+
+    C -- Sí --> E[¿Ha realizado voluntariado?]
+    C -- No --> F[Le recomendamos desarrollar liderazgo]
+    F --> Z
+
+    E -- Sí --> G[¡Tu perfil está listo para aplicar a becas!]
+    E -- No --> H[Te recomendamos realizar más voluntariados para mejorar tu perfil]
+    H --> Z
+
+    G --> Z
 ```
 
 ---
@@ -25,12 +34,28 @@ flowchart TD
 ```text
 INICIO
 
-Leer dato
+Leer certificado_ingles
 
-Si condición Entonces
-    Mostrar resultado_A
+Si certificado_ingles = "Sí" Entonces
+
+    Leer liderazgo
+
+    Si liderazgo = "Sí" Entonces
+
+        Leer voluntariado
+
+        Si voluntariado = "Sí" Entonces
+            Mostrar "¡Tu perfil está listo para aplicar a becas!"
+        SiNo
+            Mostrar "Te recomendamos realizar más voluntariados para mejorar tu perfil."
+        FinSi
+
+    SiNo
+        Mostrar "Le recomendamos desarrollar liderazgo."
+    FinSi
+
 SiNo
-    Mostrar resultado_B
+    Mostrar "Debe mejorar su inglés antes de aplicar a becas."
 FinSi
 
 FIN
@@ -40,5 +65,5 @@ FIN
 
 ## 🎮 Simulación en Scratch
 
-- **Nombre del proyecto:** `[NombreNegocio]-logica`
-- **Hecho por:** `[Maria Paula]`
+- **Nombre del proyecto:** Inspira+-logica
+- **Hecho por:** Domenica
