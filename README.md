@@ -51,10 +51,11 @@ Este repositorio fue creado con el propósito de realizar una práctica de contr
 
 ## 👥 Integrantes
 
-- Integrante 1
-- Integrante 2
-- Integrante 3
-- Integrante 4
+- Cesar
+- Domenica
+- Jessi
+- Maria Paula
+- Benjamin
 
 ---
 
