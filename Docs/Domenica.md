@@ -1,8 +1,8 @@
-# 🧠 Lógica del Negocio: [Nombre del Proyecto]
+# 🧠 Lógica del Negocio: Vinloop
 
 ## 📖 Descripción
 
-Breve descripción del negocio y el problema que resuelve.
+**Vinloop** es un emprendimiento que ofrece mini reproductores de música personalizables. El sistema permite al cliente elegir entre un modelo estándar o uno personalizado, verificando primero si existe stock disponible.
 
 ---
 
@@ -10,12 +10,20 @@ Breve descripción del negocio y el problema que resuelve.
 
 ```mermaid
 flowchart TD
-    A[Inicio] --> B[El usuario ingresa <dato>]
-    B --> C{¿Se cumple la condición?}
-    C -- Sí --> D[Realizar acción A]
-    C -- No --> E[Realizar acción B]
-    D --> F[Fin]
-    E --> F
+    A[Inicio] --> B[Bienvenido a Vinloop]
+    B --> C{¿Desea personalizar su mini reproductor?}
+
+    C -- Sí --> D{¿Hay stock disponible?}
+    C -- No --> E[Seleccionar modelo estándar]
+    E --> Z[Fin]
+
+    D -- Sí --> F[Ingresar nombre personalizado]
+    F --> G[Seleccionar playlist]
+    G --> H[Confirmar personalización]
+    H --> Z
+
+    D -- No --> I[Producto agotado]
+    I --> Z[Fin]
 ```
 
 ---
@@ -25,12 +33,29 @@ flowchart TD
 ```text
 INICIO
 
-Leer dato
+Mostrar "Bienvenido a Vinloop"
 
-Si condición Entonces
-    Mostrar resultado_A
+Leer personalizar
+
+Si personalizar = "Sí" Entonces
+
+    Si hay_stock Entonces
+
+        Leer nombre
+        Leer playlist
+
+        Mostrar "Mini reproductor personalizado correctamente."
+
+    SiNo
+
+        Mostrar "Producto agotado."
+
+    FinSi
+
 SiNo
-    Mostrar resultado_B
+
+    Mostrar "Se ha seleccionado un modelo estándar."
+
 FinSi
 
 FIN
@@ -40,5 +65,5 @@ FIN
 
 ## 🎮 Simulación en Scratch
 
-- **Nombre del proyecto:** `[NombreNegocio]-logica`
-- **Hecho por:** `[Domenica]`
+- **Nombre del proyecto:** Vinloop-logica
+- **Hecho por:** Domenica
