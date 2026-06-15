@@ -1,8 +1,8 @@
-# 🧠 Lógica del Negocio: [Nombre del Proyecto]
+# 🧠 Lógica del Negocio: Nuba
 
 ## 📖 Descripción
 
-Breve descripción del negocio y el problema que resuelve.
+**Nuba** es un emprendimiento de joyería artesanal que permite a los clientes adquirir joyas personalizadas según sus gustos y preferencias. El sistema verifica si el producto está disponible en el inventario antes de realizar la venta. Cuando la compra es exitosa, el stock disminuye y el contador de ventas aumenta.
 
 ---
 
@@ -10,12 +10,17 @@ Breve descripción del negocio y el problema que resuelve.
 
 ```mermaid
 flowchart TD
-    A[Inicio] --> B[El usuario ingresa <dato>]
-    B --> C{¿Se cumple la condición?}
-    C -- Sí --> D[Realizar acción A]
-    C -- No --> E[Realizar acción B]
-    D --> F[Fin]
-    E --> F
+    A[Inicio] --> B[¡Hola! Bienvenido a Nuba]
+    B --> C[El cliente selecciona una joya]
+    C --> D{¿Hay stock disponible?}
+
+    D -- Sí --> E[Restar 1 al stock]
+    E --> F[Aumentar el contador de ventas]
+    F --> G[Mostrar: ¡Gracias por tu compra!]
+    G --> Z[Fin]
+
+    D -- No --> H[Mostrar alerta: No hay productos en stock]
+    H --> Z
 ```
 
 ---
@@ -25,12 +30,21 @@ flowchart TD
 ```text
 INICIO
 
-Leer dato
+Mostrar "¡Hola! Bienvenido a Nuba"
 
-Si condición Entonces
-    Mostrar resultado_A
+Leer producto
+
+Si stock > 0 Entonces
+
+    stock = stock - 1
+    ventas = ventas + 1
+
+    Mostrar "¡Gracias por tu compra!"
+
 SiNo
-    Mostrar resultado_B
+
+    Mostrar "No hay productos en stock."
+
 FinSi
 
 FIN
@@ -40,5 +54,5 @@ FIN
 
 ## 🎮 Simulación en Scratch
 
-- **Nombre del proyecto:** `[NombreNegocio]-logica`
-- **Hecho por:** `[Jessi]`
+- **Nombre del proyecto:** Nuba-logica
+- **Hecho por:** Jessi
