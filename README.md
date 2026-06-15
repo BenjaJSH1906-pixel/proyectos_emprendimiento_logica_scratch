@@ -12,10 +12,10 @@ Este repositorio fue creado con el propósito de realizar una práctica de contr
 .
 ├── README.md
 └── docs/
-    ├── integrante1.txt
-    ├── integrante2.txt
-    ├── integrante3.txt
-    └── integrante4.txt
+    ├── Cesar.txt
+    ├── Domenica.txt
+    ├── Jessi.txt
+    └── MariaPaula.txt
 ```
 
 ---
